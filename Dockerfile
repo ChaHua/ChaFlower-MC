@@ -6,7 +6,7 @@ MAINTAINER nimmis <kjell.havneskold@gmail.com>
 ENV SPIGOT_HOME /minecraft
 
 #default version 
-ENV SPIGOT_VER 1.8.8
+ENV SPIGOT_VER 1.10.0
 ENV EULA true
 
 # add extra files needed
@@ -26,7 +26,7 @@ RUN useradd -s /bin/bash -d /minecraft -m minecraft
 RUN sudo echo "Asia/Shanghai" > /etc/timezone
 RUN sudo dpkg-reconfigure -f noninteractive tzdata
 
-ADD ./spigot-1.8.8.jar /root/spigot.jar
+ADD ./spigot-1.10.0.jar /root/spigot.jar
 RUN cp /root/spigot.jar /minecraft
 
 # expose minecraft port
