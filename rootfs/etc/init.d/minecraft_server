@@ -17,7 +17,7 @@
 MC_USER=minecraft       # User name running the minecraft server
 MC_PROC=spigot.jar   # name of minecraft jar file
 MC_DIR=/minecraft/ # Directory where the server should run
-MC_JAVA_OPS='-Xmx1G -Xms500M'   # java options for minecraft server
+MC_JAVA_OPS='-Xmx1G -Xms1G'   # java options for minecraft server
 
 JAVACMD=$(which java)
 
@@ -249,6 +249,8 @@ start() {
 
    # be in right working directory when starting 
    cd $MC_DIR
+
+   cp /root/spigot*.jar $MC_DIR/$MC_PROC
 
    execCMD "tail -f --pid=\$$ $MC_DIR/input.con | { $JAVACMD $MC_JAVA_OPS -jar $MC_DIR/$MC_PROC nogui > $MC_DIR/output.con 2>&1 ; kill \$$ ; } " &
 
