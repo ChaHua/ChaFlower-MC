@@ -13,7 +13,7 @@ ENV EULA true
 COPY rootfs /
 
 # add some needed commands 
-RUN apt-get update && apt-get install -y wget git && apt-get clean all
+RUN apt-get update && apt-get install -y wget && apt-get clean all
 
 # Make special user for minecraft to run in
 
