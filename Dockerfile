@@ -21,8 +21,7 @@ RUN useradd -s /bin/bash -d /minecraft -m minecraft
 
 # Build latest spigotmc
 WORKDIR /root
-RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
-RUN ["/bin/bash", "-c", "java -jar ./BuildTools.jar"]
+wget -O spigot.jar http://tcpr.ca/files/spigot/spigot-latest.jar
 
 # Set the timezone.
 RUN sudo echo "Asia/Shanghai" > /etc/timezone

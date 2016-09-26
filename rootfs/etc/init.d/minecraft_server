@@ -250,7 +250,7 @@ start() {
    # be in right working directory when starting 
    cd $MC_DIR
 
-   cp /root/spigot*.jar $MC_DIR/$MC_PROC
+   cp /root/spigot.jar $MC_DIR/$MC_PROC
 
    execCMD "tail -f --pid=\$$ $MC_DIR/input.con | { $JAVACMD $MC_JAVA_OPS -jar $MC_DIR/$MC_PROC nogui > $MC_DIR/output.con 2>&1 ; kill \$$ ; } " &
 
