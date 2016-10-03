@@ -17,7 +17,7 @@
 MC_USER=minecraft       # User name running the minecraft server
 MC_PROC=spigot.jar   # name of minecraft jar file
 MC_DIR=/minecraft/ # Directory where the server should run
-MC_JAVA_OPS='-Xmx1G -Xms1G'   # java options for minecraft server
+MC_JAVA_OPS="-Xmx${Xmx:-1G} -Xms${Xms:-1G}"   # java options for minecraft server
 
 JAVACMD=$(which java)
 
